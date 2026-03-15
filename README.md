@@ -39,6 +39,11 @@
 
 ### Быстрый старт с Docker
 
+#### Для Windows
+Если запускать проект через Taskfile, то необходимо:
+- **Docker Desktop** должен быть запущен
+- **Taskfile** установлен (можно через `winget install Task.Task`)
+
 ```bash
 # Клонировать репозиторий
 git clone https://github.com/Linempy/MockService.git
@@ -56,6 +61,7 @@ docker-compose up -d
 ```
 
 ## Команды Taskfile:
+```txt
 task start    # Сборка + запуск
 task up       # Только запуск контейнеров
 task down     # Остановка контейнеров
@@ -63,6 +69,7 @@ task restart  # Перезапуск
 task build    # Сборка JAR
 task clean    # Полная очистка
 task info     # Информация о проекте
+```
 
 ## Примеры запросов
 
