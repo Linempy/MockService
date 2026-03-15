@@ -42,7 +42,7 @@
 ```bash
 # Клонировать репозиторий
 git clone https://github.com/Linempy/MockService.git
-cd mock-service
+cd MockService
 
 # Собрать и запустить, используя Taskfile:
 task start
@@ -84,7 +84,7 @@ curl -X GET "http://localhost:8080/scripts/XML_daily.asp?date_req=02/03/2002"
 </ValCurs>
 
 ### Ошибка 400 (неверная дата)
-curl -X GET "http://localhost:8080/scripts/XML_daily.asp?date_req=40/40/2040"
+curl -X GET "http://localhost:8080/scripts/XML_daily.asp?date_req=02/03/20"
 
 #### Ответ (JSON)
 {
