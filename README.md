@@ -70,6 +70,7 @@ task info     # Информация о проекте
 curl -X GET "http://localhost:8080/scripts/XML_daily.asp?date_req=02/03/2002"
 
 #### Ответ (XML)
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <ValCurs Date="02/03/2002" name="Foreign Currency Market">
     <Valute ID="R01235">
@@ -82,6 +83,7 @@ curl -X GET "http://localhost:8080/scripts/XML_daily.asp?date_req=02/03/2002"
     </Valute>
     <!-- другие валюты -->
 </ValCurs>
+```
 
 ### Ошибка 400 (неверная дата)
 curl -X GET "http://localhost:8080/scripts/XML_daily.asp?date_req=02/03/20"
