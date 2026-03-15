@@ -1,0 +1,55 @@
+version: '3'
+
+tasks:
+  start:
+    desc: Собрать и запустить проект
+    cmds:
+      - echo "🚀 Сборка и запуск..."
+      - cmd /c "gradlew clean build"
+      - docker-compose up -d --build
+      - echo "✅ Приложение http://localhost:8080"
+      - echo "📊 Swagger http://localhost:8080/swagger-ui.html"
+
+  up:
+    desc: Запустить контейнеры (без сборки)
+    cmds:
+      - echo "🐳 Запуск контейнеров..."
+      - docker-compose up -d
+      - echo "✅ Приложение запущено"
+
+  down:
+    desc: Остановить контейнеры
+    cmds:
+      - echo "🛑 Остановка..."
+      - docker-compose down
+      - echo "✅ Контейнеры остановлены"
+
+  restart:
+    desc: Перезапустить контейнеры
+    cmds:
+      - task: down
+      - task: up
+
+  build:
+    desc: Собрать JAR
+    cmds:
+      - cmd /c "gradlew clean build"
+
+  clean:
+    desc: Очистить всё (включая БД)
+    cmds:
+      - docker-compose down -v
+      - cmd /c "gradlew clean"
+      - echo "✅ Всё очищено"
+
+
+  info:
+    desc: Информация
+    cmds:
+      - echo "========================="
+      - echo "  Mock Service"
+      - echo "========================="
+      - echo "App  http://localhost:8080"
+      - echo "Docs http://localhost:8080/swagger-ui.html"
+      - echo "DB   localhost:5432/cbrdb"
+      - echo "========================="

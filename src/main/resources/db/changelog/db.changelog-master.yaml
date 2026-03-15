@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changeset/V001_init_exchange_rate_table.sql
+  - include:
+      file: db/changelog/changeset/V002_insert_values.sql
